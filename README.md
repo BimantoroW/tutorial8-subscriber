@@ -7,3 +7,8 @@ Di atas, `guest` pertama merupakan username yang digunakan untuk autentikasi den
 ### Slow Subscriber Simulation
 ![Slow subscriber](src/asset/slow-subscriber.png)
 Saya menjalankan program publisher sebanyak 5 kali jadi seharusnya ada 25 total pesan yang dikirim. Namun, jumlah queue-nya hanya 20. Ini kemungkinan terjadi karena 5 pesan pertama dapat masuk tanpa delay sedangkan 20 pesan lainnya harus menunggu.
+
+### Many subscribers
+![RabbitMQ Many Subscribers](src/asset/rabbitmq-many-subscribers.png)
+![Terminals](src/asset/terminal-many-subscribers.png)
+Dari gambar di atas, dapat dilihat bahwa sekarang queue-nya habis lebih cepat dan consumer ack-nya lebih tinggi. Hal ini terjadi karena jumlah subscriber-nya bertambah sehingga queue-nya dapat berjalan lebih cepat karena lebih banyak subscriber untuk memproses pesan-pesan yang dikirim. Consumer ack meningkat karena kecepatan pemrosesan pesannya juga meningkat.
